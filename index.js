@@ -3,7 +3,8 @@ const express = require('express')
 const app = express()
 // require('ejs')
 // app.set('view engine', 'ejs')
-const port = 3200
+const dotenv = require('dotenv')
+dotenv.config()
 
 
 const nigerianArtiste = [
@@ -18,6 +19,7 @@ app.get('/users', (req,res) =>{
     res.send(nigerianArtiste)
 })
 
+const port = process.env.port
 app.listen(port, () =>{
     console.log(`server running on localhost:$(port)`);
     
