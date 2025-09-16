@@ -1,6 +1,7 @@
 // const { name } = require('ejs')
 const express = require('express')
 const app = express()
+const cors = require('cors')
 // require('ejs')
 // app.set('view engine', 'ejs')
 const dotenv = require('dotenv')
@@ -14,6 +15,8 @@ const nigerianArtiste = [
     {name: 'Paultomisin', songTitle: 'Iyin ye', songUrl:'https://open.spotify.com/track/2OmxCzeLuekhaX7nSvzhax?si=4a64f417d8814463', yearofRelease:'2025'}
 ]
 
+app.use(cors());
+app.use('/', songRoute)
 
 app.get('/users', (req,res) =>{
     res.send(nigerianArtiste)
