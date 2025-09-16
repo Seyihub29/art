@@ -16,7 +16,7 @@ const nigerianArtiste = [
 ]
 
 app.use(cors());
-app.use('/', songRoute)
+// app.use('/', songRoute)
 
 app.get('/users', (req,res) =>{
     res.send(nigerianArtiste)
